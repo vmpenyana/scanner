@@ -32,7 +32,7 @@
                 },
                 (decodedText, decodedResult) => {
                     // do something when code is read
-                    alert(`The secret value is ${decodedResult}`)
+                    alert(`The secret value is ${JSON.stringify(decodedResult)}`)
                     html5QrCode.stop().then((ignore) => {
                     // QR Code scanning is stopped.
                     alert("thank you for using the scanner. Goodbye!")
