@@ -25,15 +25,20 @@
             // .. use this to start scanning.
             const html5QrCode = new Html5Qrcode("reader")
             html5QrCode.start(
-                cameraId, 
+                { facingMode: "environment" }, 
                 {
                     fps: 10,    // Optional, frame per seconds for qr code scanning
                     qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
                 },
                 (decodedText, decodedResult) => {
                     // do something when code is read
-                    console.log(`Done(): something went wrong: `, decodedText)
-
+                    alert(`The secret value is ${decodedResult}`)
+                    html5QrCode.stop().then((ignore) => {
+                    // QR Code scanning is stopped.
+                    alert("thank you for using the scanner. Goodbye!")
+                    }).catch((err) => {
+                    // Stop failed, handle it.
+                    });
                 },
                 (errorMessage) => {
                     // parse error, ignore it.
@@ -50,8 +55,7 @@
             console.log(`Error getting cameras: `, err);
         });
 
-
-
+        // https://vmpenyana.github.io/scanner/
     </script>
 </body>
 </html>
