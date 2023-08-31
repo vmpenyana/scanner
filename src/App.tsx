@@ -3,7 +3,7 @@ import './App.css'
 function App() {
   return (
     <>
-     <h3 id='reader'>Magic Location</h3>
+     <div id='reader'>Magic Location</div>
     </>
   )
 }
