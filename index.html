@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Scanner</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
     <div id="reader"></div>
     <button onclick="handleStartScan()">Let's scan some codes</button>
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
@@ -58,5 +60,5 @@
         }
         // https://vmpenyana.github.io/scanner/
     </script>
-</body>
+  </body>
 </html>
