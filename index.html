@@ -10,7 +10,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <div id="reader"></div>
     <button onclick="handleStartScan()">Let's scan some codes</button>
     <script>
         const handleStartScan = () => {
@@ -29,8 +28,8 @@
                 html5QrCode.start(
                     { facingMode: "environment" }, 
                     {
-                        fps: 10,    // Optional, frame per seconds for qr code scanning
-                        qrbox: { width: 250, height: 250 }  // Optional, if you want bounded box UI
+                        fps: 60,    // Optional, frame per seconds for qr code scanning
+                        qrbox: { width: 650, height: 650 }  // Optional, if you want bounded box UI
                     },
                     (decodedText, decodedResult) => {
                         // do something when code is read
