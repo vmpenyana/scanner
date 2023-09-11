@@ -11,6 +11,10 @@ const Scanner = () => {
                     const scanner = new Html5Qrcode("reader");
                     scanner.start({
                         facingMode: "environment",
+                        aspectRatio: {
+                            exact: 400,
+                            ideal: 500
+                        }
                     }, {disableFlip: false, fps: 60}, (result:string) => {
                         alert(`result: ${JSON.stringify(result)}`)
                     }, red)
