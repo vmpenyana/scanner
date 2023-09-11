@@ -1,9 +1,6 @@
 import { Html5Qrcode } from 'html5-qrcode';
 const Scanner = () => {
     const getCameras = () => {
-        const green = () => {
-            console.log("good in business");
-        }
     
         const red = () => {
             console.log("bad in business")
@@ -14,7 +11,9 @@ const Scanner = () => {
                     const scanner = new Html5Qrcode("reader");
                     scanner.start({
                         facingMode: "environment",
-                    }, {disableFlip: false, fps: 60}, green, red)
+                    }, {disableFlip: false, fps: 60}, (result:string) => {
+                        alert(`result: ${JSON.stringify(result)}`)
+                    }, red)
                 }
             })
     }
