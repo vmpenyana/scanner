@@ -13,7 +13,9 @@ const Scanner = () => {
                 if(devices && devices.length) {
                     const cameraId = devices[0].id
                     const scanner = new Html5Qrcode("reader");
-                    scanner.start(cameraId, undefined, green, red)
+                    scanner.start({
+                        facingMode: "environment",
+                    }, {disableFlip: false, fps: 60}, green, red)
                 }
             })
     }
