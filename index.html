@@ -10,54 +10,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- <button onclick="handleStartScan()">Scan QR Code</button>
-    <script>
-        const handleStartScan = () => {
-            // This method will trigger user permissions
-            Html5Qrcode.getCameras().then(devices => {
-            /**
-             * devices would be an array of objects of type:
-             * { id: "id", label: "label" }
-             */
-                console.log(`Got some cams, let's do some work!`, devices);
-                console.log(devices)
-            if (devices && devices.length) {
-                var cameraId = devices[0].id;
-                // .. use this to start scanning.
-                const html5QrCode = new Html5Qrcode("reader")
-                html5QrCode.start(
-                    { facingMode: "environment" }, 
-                    {
-                        fps: 60,    // Optional, frame per seconds for qr code scanning
-                        qrbox: { width: 650, height: 650 }  // Optional, if you want bounded box UI
-                    },
-                    (decodedText, decodedResult) => {
-                        // do something when code is read
-                        alert(`The secret value is ${JSON.stringify(decodedResult)}`)
-                        html5QrCode.stop().then((ignore) => {
-                        // QR Code scanning is stopped.
-                        alert("thank you for using the scanner. Goodbye!")
-                        }).catch((err) => {
-                        // Stop failed, handle it.
-                        });
-                    },
-                    (errorMessage) => {
-                        // parse error, ignore it.
-                        console.log(`ErrorMessage(): something went wrong: `, errorMessage)
-                    })
-                    .catch((err) => {
-                    // Start failed, handle it.
-                        console.log(`catch(): something went wrong: `, err)
-
-                    });
-            }
-            }).catch(err => {
-            // handle err
-                console.log(`Error getting cameras: `, err);
-            });
-
-        }
-        // https://vmpenyana.github.io/scanner/
-    </script> -->
   </body>
 </html>

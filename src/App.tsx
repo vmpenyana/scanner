@@ -1,11 +1,8 @@
-import './App.css'
-
-function App() {
+const App = () => {
   return (
-    <>
-      <h3>replacement area - workflow demo</h3>
-    </>
-  )
-}
+      <div className="App">
+      </div>
+  );
+};
 
-export default App
+export default App;
