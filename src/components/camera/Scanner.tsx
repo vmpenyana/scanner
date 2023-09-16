@@ -25,7 +25,7 @@ const Scanner = () => {
                     scanner.start({
                         facingMode: FACING_MODE.ENV,
                     }, {disableFlip: false, fps: 60}, (decodedText) => handleScanSuccess(decodedText, scanner), 
-                    (e) => {})
+                    (e) => {e})
                 }
             })
     }
