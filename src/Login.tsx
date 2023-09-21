@@ -1,20 +1,25 @@
 import { Form } from 'react-router-dom';
+import { getOrganizer } from './organizers';
+import { redirect } from 'react-router-dom';
 
-export const action = async () => {
-    console.log("got some action!")
-    return "cool!"
-}
-
-const handleLogin = () => {
-    
+export const action = async (submission:any) => {
+    const formData = await submission.request.formData();
+    const name = formData.get(`organizer`);
+    const password = formData.get(`password`);
+    const organizer = getOrganizer(name, password);
+    if(organizer) {
+        return redirect(`/scanner/:${organizer.eventId}`);
+    } else {
+        return null;
+    }
 }
 
 const Login = () => {
     return (
-        <Form method='POST' action='/scanner/blob'>
+        <Form method='POST'>
             <input type='text' name='organizer' placeholder='Enter Org name' />
             <input type='password' placeholder='Enter Password' name='password' />
-            <button onClick={handleLogin}>Login In!</button>
+            <button>Login In!</button>
         </Form>
     )
 }
