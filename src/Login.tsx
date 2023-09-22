@@ -1,6 +1,5 @@
-import { Form } from 'react-router-dom';
 import { getOrganizer } from './organizers';
-import { redirect } from 'react-router-dom';
+import { redirect, Form } from 'react-router-dom';
 
 export const action = async (submission:any) => {
     const formData = await submission.request.formData();
@@ -8,7 +7,7 @@ export const action = async (submission:any) => {
     const password = formData.get(`password`);
     const organizer = getOrganizer(name, password);
     if(organizer) {
-        return redirect(`/scanner/:${organizer.eventId}`);
+        return redirect(`/scanner/${organizer.eventId}`);
     } else {
         return null;
     }

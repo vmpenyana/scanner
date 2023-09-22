@@ -1,5 +1,4 @@
 import { Html5Qrcode } from 'html5-qrcode';
-
 enum FACING_MODE {
     ENV = "environment"
 }
@@ -14,12 +13,6 @@ const handleScanSuccess = (decodeText:string, scanner:Html5Qrcode) =>
     }).catch(e => {
         console.log("something went wrong: ", e)
     })
-}
-
-export const loader =async () => {
-    let name: string = "vincent";
-    console.log(name)
-    return {name}
 }
 
 const Scanner = () => {
